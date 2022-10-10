@@ -1,2 +1,4 @@
-# A-VR-WS-THI
-A/VR Course 22/23 THI
+# A/VR Course WS 22/23 THI 
+Member: 
+
+Veronika Langner, Leon Endres, Jonathan Balcombe
