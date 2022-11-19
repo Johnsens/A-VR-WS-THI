@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MultiUserVR.unity
     guid: c31d2931a0c2b374f9bce1b5bbb0f514
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3fc29b35442a64a48b96d709e168370f, type: 2}
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: 0cbdab12b4b62f5428b9fb90f1ce4447, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: acb6c5669d5202e4eac7cc41936a2395, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: daf2e90ce7ca27940ae43c0dbf42bb21, type: 2}
