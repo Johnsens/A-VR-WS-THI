@@ -39,7 +39,6 @@ MonoBehaviour:
   debugLogFlagForNative: 1048335
   debugLogFlagForUnity: 1048335
   overrideLogFlagForNative: 0
-  useCMPChecker: 0
   amcMode: 0
   amcModeConfirm: 0
   fadeOut: 0
@@ -53,4 +52,3 @@ MonoBehaviour:
   EnableTracker: 0
   EnableNaturalHand: 0
   EnableElectronicHand: 0
-  EnableLipExp: 0
