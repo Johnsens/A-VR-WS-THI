@@ -19,6 +19,10 @@ public class GameMenuManager : MonoBehaviour
     public GameObject endPopUp;
     public GameObject startMissionOverlay;
 
+    public Transform XRRigPosition;
+
+    private bool onetime = false;
+
 
 
     public InputActionProperty showButton;
@@ -29,9 +33,7 @@ public class GameMenuManager : MonoBehaviour
     private NetworkPlayer networkPlayer;
 
     //variables needed to keep Menu in front of player
-    public Transform head;
     public float spawnDistance = 2;
-    private Transform headRig;
 
     // Start is called before the first frame update
     void Start()
@@ -42,9 +44,13 @@ public class GameMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       showMenuSwitch();
-       showPlantFoundPopUp();
-       showEndoverlay();
+        if (onetime == false) {
+            updateStartMissionOverlay();
+            onetime = true;
+        }
+        showMenuSwitch();
+        showPlantFoundPopUp();
+        showEndoverlay();
     }
 
 
@@ -55,11 +61,11 @@ public class GameMenuManager : MonoBehaviour
             gamemenu.SetActive(!gamemenu.activeSelf);
             
             //Defining a Vector to place the menu in front of player by using the normalized vector and manipulating the x and z axis
-            gamemenu.transform.position = head.position + new Vector3(head.forward.x,0,head.forward.z).normalized * spawnDistance;
+            gamemenu.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
         }
 
         //Making Sure menu is always facing the player by manipulting the y axis
-        gamemenu.transform.LookAt(new Vector3 (head.position.x, gamemenu.transform.position.y, head.position.z));
+        gamemenu.transform.LookAt(new Vector3 (XRRigPosition.position.x, gamemenu.transform.position.y, XRRigPosition.position.z));
         //flipping the menu around, as it was backwards
         gamemenu.transform.forward *= -1;
     }
@@ -75,16 +81,20 @@ public class GameMenuManager : MonoBehaviour
             //XROrigin rig = FindObjectOfType<XROrigin>();
             //headRig = rig.transform.Find("ViveCameraRig/Camera");
             startMissionOverlay.SetActive(!startMissionOverlay.activeSelf);
-            startMissionOverlay.transform.position = headRig.position + new Vector3(headRig.forward.x,0,headRig.forward.z).normalized * spawnDistance;
-            //startMissionOverlay.transform.LookAt(new Vector3 (headRig.position.x, startMissionOverlay.transform.position.y, headRig.position.z));
+
+    }
+
+    void updateStartMissionOverlay() {
+                    startMissionOverlay.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
+            startMissionOverlay.transform.LookAt(new Vector3 (XRRigPosition.position.x, startMissionOverlay.transform.position.y, XRRigPosition.position.z));
         //flipping the menu around, as it was backwards
-            //startMissionOverlay.transform.forward *= -1;
+            XRRigPosition.transform.forward *= -1;
     }
 
    void showEndoverlay() {
         if (plantPopUp.activeSelf == true) {
             endPopUp.SetActive(!endPopUp.activeSelf);
-            endPopUp.transform.position = head.position + new Vector3(head.forward.x,0,head.forward.z).normalized * spawnDistance;
+            endPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
         }
     }
 }
