@@ -8,6 +8,7 @@ public class GameMenuManager : MonoBehaviour
 
     //menu is Canvas
     public GameObject menu;
+    public GameObject plantPopUp;
     public InputActionProperty showButton;
 
     //variables needed to keep Menu in front of player
