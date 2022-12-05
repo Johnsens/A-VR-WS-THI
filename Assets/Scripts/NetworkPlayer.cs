@@ -13,7 +13,7 @@ public class NetworkPlayer : MonoBehaviourPun
     //public Transform RightHand;
     private PhotonView photonView;
 
-    private Transform headRig;
+    public Transform headRig;
     //private Transform rightHandRig;
     //private Transform leftHandRig;
     public Vector3 CameraOffset = new Vector3(0, 0, 0);
