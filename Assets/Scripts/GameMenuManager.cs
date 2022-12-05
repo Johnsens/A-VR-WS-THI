@@ -21,8 +21,8 @@ public class GameMenuManager : MonoBehaviour
 
     public Transform XRRigPosition;
 
-    private bool onetime = false;
-
+    private bool onetimeStart = false;
+    private bool onetimePlant = false;
 
 
     public InputActionProperty showButton;
@@ -39,14 +39,15 @@ public class GameMenuManager : MonoBehaviour
     void Start()
     {
         showStartMissionOverlay();
+        showPlantFoundPopUp();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (onetime == false) {
+        if (onetimeStart == false) {
             updateStartMissionOverlay();
-            onetime = true;
+            onetimeStart = true;
         }
         showMenuSwitch();
         showPlantFoundPopUp();
@@ -71,10 +72,16 @@ public class GameMenuManager : MonoBehaviour
     }
 
     void showPlantFoundPopUp() {
-        //if (plant.isGrabbed == true){
-        //    plantPopUp.SetActive(!plantPopUp.activeSelf);
-        //    plantPopUp.transform.position = head.position + new Vector3(head.forward.x,0,head.forward.z).normalized * spawnDistance;
-        //}
+        plantPopUp.SetActive(!startMissionOverlay.activeSelf);
+
+        if (plant.isGrabbed == true){
+            plantPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
+            plantPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
+            XRRigPosition.transform.forward *= -1;
+        }
+    }
+        void updatePlantFoundOverlay() {
+
     }
 
     void showStartMissionOverlay() {
@@ -92,7 +99,7 @@ public class GameMenuManager : MonoBehaviour
     }
 
    void showEndoverlay() {
-        if (plantPopUp.activeSelf == true) {
+        if (endPopUp.activeSelf == true) {
             endPopUp.SetActive(!endPopUp.activeSelf);
             endPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
         }
