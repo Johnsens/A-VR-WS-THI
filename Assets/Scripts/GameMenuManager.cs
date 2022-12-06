@@ -95,7 +95,7 @@ public class GameMenuManager : MonoBehaviour
                     startMissionOverlay.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
             startMissionOverlay.transform.LookAt(new Vector3 (XRRigPosition.position.x, startMissionOverlay.transform.position.y, XRRigPosition.position.z));
         //flipping the menu around, as it was backwards
-            XRRigPosition.transform.forward *= -1;
+            startMissionOverlay.transform.forward *= -1;
     }
 
    void showEndoverlay() {
