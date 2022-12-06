@@ -39,7 +39,7 @@ public class GameMenuManager : MonoBehaviour
     void Start()
     {
         showStartMissionOverlay();
-        showPlantFoundPopUp();
+    //    showPlantFoundPopUp();
     }
 
     // Update is called once per frame
@@ -50,8 +50,8 @@ public class GameMenuManager : MonoBehaviour
             onetimeStart = true;
         }
         showMenuSwitch();
-        showPlantFoundPopUp();
-        showEndoverlay();
+        //showPlantFoundPopUp();
+        //showEndoverlay();
     }
 
 
