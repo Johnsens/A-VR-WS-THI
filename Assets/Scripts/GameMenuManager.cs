@@ -19,6 +19,18 @@ public class GameMenuManager : MonoBehaviour
     public GameObject endPopUp;
     public GameObject startMissionOverlay;
 
+    public GameObject OverlayToSecondButton;
+    public GameObject OverlayToThirdButton;
+    public GameObject OverlayToFourthButton;
+    public GameObject CloseOverlayButton;
+
+
+    public GameObject OverlayPageOne;
+    public GameObject OverlayPageTwo;
+    public GameObject OverlayPageThree;
+    public GameObject OverlayPageFour;
+
+
     public Transform XRRigPosition;
 
     private bool onetimeStart = false;
@@ -50,6 +62,32 @@ public class GameMenuManager : MonoBehaviour
             onetimeStart = true;
         }
         showMenuSwitch();
+        //Switch between Modals
+        // prev steps needed?
+        //TODO: wie wird der Button angesprochen?
+       /* if(OverlayToSecondButton.active)
+        {
+            OverlayPageOne.SetActive(false);
+            OverlayPageTwo.SetActive(true);
+
+        }
+
+        else if (OverlayToThirdButton.active)
+        {
+            OverlayPageTwo.SetActive(false);
+            OverlayPageThree.SetActive(true);
+        }
+        else if (OverlayToFourthButton.active)
+        {
+            OverlayPageThree.SetActive(false);
+            OverlayPageFour.SetActive(true);
+        }
+        else if (CloseOverlayButton.active)
+        {
+            OverlayPageFour.SetActive(false);
+            //start game
+        }
+       */
         //showPlantFoundPopUp();
         //showEndoverlay();
     }
