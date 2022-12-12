@@ -29,6 +29,7 @@ public class GameMenuManager : MonoBehaviour
     public GameObject OverlayPageTwo;
     public GameObject OverlayPageThree;
     public GameObject OverlayPageFour;
+    public GameObject ClosePlantPopup;
 
 
     public Transform XRRigPosition;
@@ -62,32 +63,30 @@ public class GameMenuManager : MonoBehaviour
             onetimeStart = true;
         }
         showMenuSwitch();
-        //Switch between Modals
-        // prev steps needed?
-        //TODO: wie wird der Button angesprochen?
-       /* if(OverlayToSecondButton.active)
+
+       /*if(OverlayToSecondButton.clicked)
         {
             OverlayPageOne.SetActive(false);
             OverlayPageTwo.SetActive(true);
 
         }
 
-        else if (OverlayToThirdButton.active)
+        else if (OverlayToThirdButton.clicked)
         {
             OverlayPageTwo.SetActive(false);
             OverlayPageThree.SetActive(true);
         }
-        else if (OverlayToFourthButton.active)
+        else if (OverlayToFourthButton.clicked)
         {
             OverlayPageThree.SetActive(false);
             OverlayPageFour.SetActive(true);
         }
-        else if (CloseOverlayButton.active)
+        else if (CloseOverlayButton.clicked)
         {
             OverlayPageFour.SetActive(false);
             //start game
-        }
-       */
+        }*/
+       
         //showPlantFoundPopUp();
         //showEndoverlay();
     }
@@ -109,6 +108,7 @@ public class GameMenuManager : MonoBehaviour
         gamemenu.transform.forward *= -1;
     }
 
+
     void showPlantFoundPopUp() {
         plantPopUp.SetActive(!startMissionOverlay.activeSelf);
 
@@ -117,10 +117,18 @@ public class GameMenuManager : MonoBehaviour
             plantPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
             XRRigPosition.transform.forward *= -1;
         }
+
     }
         void updatePlantFoundOverlay() {
 
     }
+
+    /*void showEndPopup() {
+        if (ClosePlantPopup.clicked) {
+            plantPopup.SetActive(false);
+            endPopUp.SetActive(true);
+        }
+    }*/
 
     void showStartMissionOverlay() {
             //XROrigin rig = FindObjectOfType<XROrigin>();
