@@ -29,10 +29,15 @@ public class PlantOverlayTrigger : MonoBehaviour
 
 
     public void plantShown() {
-                plantPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
-                plantPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
-                plantPopUp.transform.forward *= -1;
                 plantPopUp.SetActive(!plantPopUp.activeSelf);
+                Debug.Log("Plant pop up shown");
+                //plantPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
+                //Debug.Log(plantPopUp.transform.position);
+                //plantPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
+                //Debug.Log(plantPopUp.transform.position);
+                //plantPopUp.transform.forward *= -1;
+                //Debug.Log(plantPopUp.transform.position);
+
                 Debug.Log("Plant pop up shown");
                 plant.SetActive(!plant.activeSelf);
                 Debug.Log("Plant disappeared");
