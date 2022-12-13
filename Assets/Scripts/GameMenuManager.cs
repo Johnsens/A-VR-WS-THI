@@ -14,16 +14,21 @@ using Unity.XR.CoreUtils;
 public class GameMenuManager : MonoBehaviour
 {
 
+    // Different Overlays
+
     public GameObject gamemenu;
-    public GameObject plantPopUp;
+    public GameObject plantPopUp; //Will be deprecated -> See different PlantFoundPopUps
     public GameObject endPopUp;
     public GameObject startMissionOverlay;
+
+    //Button declarations on the Overlays
 
     public GameObject OverlayToSecondButton;
     public GameObject OverlayToThirdButton;
     public GameObject OverlayToFourthButton;
     public GameObject CloseOverlayButton;
 
+    //Not used right now, would be used to change the content of the Overlays when going through the pages
 
     public GameObject OverlayPageOne;
     public GameObject OverlayPageTwo;
@@ -36,6 +41,18 @@ public class GameMenuManager : MonoBehaviour
 
     private bool onetimeStart = false;
     private bool onetimePlant = false;
+
+
+    //Values used for counting inventories
+
+
+    public GameObject FirstPlantFoundPopUp;
+
+    public GameObject SecondPlantFoundPopUp;
+
+    public GameObject ThirdPlantFoundPopUp;
+
+    public int plantCount = 0;
 
 
     public InputActionProperty showButton;
@@ -52,7 +69,7 @@ public class GameMenuManager : MonoBehaviour
     void Start()
     {
         showStartMissionOverlay();
-    //    showPlantFoundPopUp();
+        //    showPlantFoundPopUp();
     }
 
     // Update is called once per frame
@@ -64,62 +81,67 @@ public class GameMenuManager : MonoBehaviour
         //}
         //showMenuSwitch();
 
-       /*if(OverlayToSecondButton.clicked)
-        {
-            OverlayPageOne.SetActive(false);
-            OverlayPageTwo.SetActive(true);
+        /*if(OverlayToSecondButton.clicked)
+         {
+             OverlayPageOne.SetActive(false);
+             OverlayPageTwo.SetActive(true);
 
-        }
+         }
 
-        else if (OverlayToThirdButton.clicked)
-        {
-            OverlayPageTwo.SetActive(false);
-            OverlayPageThree.SetActive(true);
-        }
-        else if (OverlayToFourthButton.clicked)
-        {
-            OverlayPageThree.SetActive(false);
-            OverlayPageFour.SetActive(true);
-        }
-        else if (CloseOverlayButton.clicked)
-        {
-            OverlayPageFour.SetActive(false);
-            //start game
-        }*/
-       
+         else if (OverlayToThirdButton.clicked)
+         {
+             OverlayPageTwo.SetActive(false);
+             OverlayPageThree.SetActive(true);
+         }
+         else if (OverlayToFourthButton.clicked)
+         {
+             OverlayPageThree.SetActive(false);
+             OverlayPageFour.SetActive(true);
+         }
+         else if (CloseOverlayButton.clicked)
+         {
+             OverlayPageFour.SetActive(false);
+             //start game
+         }*/
+
         //showPlantFoundPopUp();
         //showEndoverlay();
     }
 
 
     //Functions to show Overlays
-    void showMenuSwitch() {
+    void showMenuSwitch()
+    {
         if (showButton.action.WasPressedThisFrame())
         {
             gamemenu.SetActive(!gamemenu.activeSelf);
-            
+
             //Defining a Vector to place the menu in front of player by using the normalized vector and manipulating the x and z axis
-            gamemenu.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
+            gamemenu.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x, 0, XRRigPosition.forward.z).normalized * spawnDistance;
         }
 
         //Making Sure menu is always facing the player by manipulting the y axis
-        gamemenu.transform.LookAt(new Vector3 (XRRigPosition.position.x, gamemenu.transform.position.y, XRRigPosition.position.z));
+        gamemenu.transform.LookAt(new Vector3(XRRigPosition.position.x, gamemenu.transform.position.y, XRRigPosition.position.z));
         //flipping the menu around, as it was backwards
         gamemenu.transform.forward *= -1;
     }
 
 
-    void showPlantFoundPopUp() {
+    void showPlantFoundPopUp()
+    {
         plantPopUp.SetActive(!startMissionOverlay.activeSelf);
 
-        if (plant.isGrabbed == true){
-            plantPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
-            plantPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
+        if (plant.isGrabbed == true)
+        {
+            plantCount += plantCount;
+            plantPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x, 0, XRRigPosition.forward.z).normalized * spawnDistance;
+            plantPopUp.transform.LookAt(new Vector3(XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
             XRRigPosition.transform.forward *= -1;
         }
 
     }
-        void updatePlantFoundOverlay() {
+    void updatePlantFoundOverlay()
+    {
 
     }
 
@@ -130,25 +152,29 @@ public class GameMenuManager : MonoBehaviour
         }
     }*/
 
-    void showStartMissionOverlay() {
-            //XROrigin rig = FindObjectOfType<XROrigin>();
-            //headRig = rig.transform.Find("ViveCameraRig/Camera");
-            startMissionOverlay.SetActive(!startMissionOverlay.activeSelf);
-            
+    void showStartMissionOverlay()
+    {
+        //XROrigin rig = FindObjectOfType<XROrigin>();
+        //headRig = rig.transform.Find("ViveCameraRig/Camera");
+        startMissionOverlay.SetActive(!startMissionOverlay.activeSelf);
+
 
     }
 
-    void updateStartMissionOverlay() {
-                    startMissionOverlay.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
-            startMissionOverlay.transform.LookAt(new Vector3 (XRRigPosition.position.x, startMissionOverlay.transform.position.y, XRRigPosition.position.z));
+    void updateStartMissionOverlay()
+    {
+        startMissionOverlay.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x, 0, XRRigPosition.forward.z).normalized * spawnDistance;
+        startMissionOverlay.transform.LookAt(new Vector3(XRRigPosition.position.x, startMissionOverlay.transform.position.y, XRRigPosition.position.z));
         //flipping the menu around, as it was backwards
-            startMissionOverlay.transform.forward *= -1;
+        startMissionOverlay.transform.forward *= -1;
     }
 
-   void showEndoverlay() {
-        if (endPopUp.activeSelf == true) {
+    public void showEndoverlay()
+    {
+        if (endPopUp.activeSelf == true)
+        {
             endPopUp.SetActive(!endPopUp.activeSelf);
-            endPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
+            endPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x, 0, XRRigPosition.forward.z).normalized * spawnDistance;
         }
     }
 }
