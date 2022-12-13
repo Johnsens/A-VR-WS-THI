@@ -58,11 +58,11 @@ public class GameMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (onetimeStart == false) {
-            updateStartMissionOverlay();
-            onetimeStart = true;
-        }
-        showMenuSwitch();
+        //if (onetimeStart == false) {
+        //    updateStartMissionOverlay();
+        //    onetimeStart = true;
+        //}
+        //showMenuSwitch();
 
        /*if(OverlayToSecondButton.clicked)
         {
@@ -134,6 +134,7 @@ public class GameMenuManager : MonoBehaviour
             //XROrigin rig = FindObjectOfType<XROrigin>();
             //headRig = rig.transform.Find("ViveCameraRig/Camera");
             startMissionOverlay.SetActive(!startMissionOverlay.activeSelf);
+            
 
     }
 
