@@ -26,17 +26,17 @@ public class PlantOverlayTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (counter == 1)
-        {
-            levelfinishedPopUp.SetActive(!levelfinishedPopUp.activeSelf);
+        //if (counter == 1)
+        //{
+/*             levelfinishedPopUp.SetActive(!levelfinishedPopUp.activeSelf);
             levelfinishedPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
             Debug.Log(plantPopUp.transform.position);
             Debug.Log("EndConditionMet");
             levelfinishedPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, levelfinishedPopUp.transform.position.y, XRRigPosition.position.z));
             Debug.Log(plantPopUp.transform.position);
             levelfinishedPopUp.transform.forward *= -1;
-            Debug.Log("EndConditionMet");
-        }
+            Debug.Log("EndConditionMet"); */
+        //}
     }
 
 
@@ -50,13 +50,21 @@ public class PlantOverlayTrigger : MonoBehaviour
                 //plantPopUp.transform.forward *= -1;
                 //Debug.Log(plantPopUp.transform.position);
 
-                Debug.Log("Plant pop up shown");
                 plant.SetActive(!plant.activeSelf);
                 Debug.Log("Plant disappeared");
                 //This counter would be for different plants of the same type
-                //counter = counter + 1;
-                Debug.Log(counter);
-                Debug.Log("Plant disappeared");
+                countPlants();
+    }
+
+
+    public void countPlants() {
+        GlobalVariables.plantCounter = GlobalVariables.plantCounter + 1;
+        Debug.Log("The PlantCounter is " + GlobalVariables.plantCounter);
+        if (plant.CompareTag("Poisonous")){
+            GlobalVariables.poisonPlantCounter = GlobalVariables.poisonPlantCounter +1;
+            Debug.Log("The PoisonousPlantCounter is " + GlobalVariables.poisonPlantCounter);
+        }
+
     }
 
 }

@@ -4,25 +4,26 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class Counter : MonoBehaviour
+public class GlobalVariables : MonoBehaviour
 {
 
-    public int counter = 0;
-    public GameObject blueberry;
-    public bool blueberryfound = false;
+    public static int plantCounter;
+    public static int poisonPlantCounter;
+
     //public GameObjects[] plants = plant.FindGameObjectsWithTag("Plant");
 
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {       
+        plantCounter = 0;
+        poisonPlantCounter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(blueberry.SetActive(false) && blueberryfound = false){
+      /*   if(blueberry.SetActive(false) && blueberryfound = false){
             counter = counter + 1;
         }
         if (counter == 5)
@@ -35,7 +36,7 @@ public class Counter : MonoBehaviour
                 Debug.Log(plantPopUp.transform.position);
                 levelfinishedPopUp.transform.forward *= -1;
                 Debug.Log("EndConditionMet");
-            }
+            } */
             
     }
 }

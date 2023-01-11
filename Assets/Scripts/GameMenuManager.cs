@@ -75,37 +75,6 @@ public class GameMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (onetimeStart == false) {
-        //    updateStartMissionOverlay();
-        //    onetimeStart = true;
-        //}
-        //showMenuSwitch();
-
-        /*if(OverlayToSecondButton.clicked)
-         {
-             OverlayPageOne.SetActive(false);
-             OverlayPageTwo.SetActive(true);
-
-         }
-
-         else if (OverlayToThirdButton.clicked)
-         {
-             OverlayPageTwo.SetActive(false);
-             OverlayPageThree.SetActive(true);
-         }
-         else if (OverlayToFourthButton.clicked)
-         {
-             OverlayPageThree.SetActive(false);
-             OverlayPageFour.SetActive(true);
-         }
-         else if (CloseOverlayButton.clicked)
-         {
-             OverlayPageFour.SetActive(false);
-             //start game
-         }*/
-
-        //showPlantFoundPopUp();
-        //showEndoverlay();
     }
 
 
