@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GrabberPool = HTC.UnityPlugin.Utility.ObjectPool<Draggable.Grabber>;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
@@ -30,14 +29,13 @@ public class PlantOverlayTrigger : MonoBehaviour
 
     public void plantShown() {
                 plantPopUp.SetActive(!plantPopUp.activeSelf);
+                countPlants();
                 Debug.Log("Plant pop up shown");
                 plant.SetActive(!plant.activeSelf);
                 Debug.Log("Plant disappeared");
-                //This counter would be for different plants of the same type
-                countPlants();
     }
 
-
+    //Counts the plants and every plant given a special tag
     public void countPlants() {
         GlobalVariables.plantCounter = GlobalVariables.plantCounter + 1;
         Debug.Log("The PlantCounter is " + GlobalVariables.plantCounter);

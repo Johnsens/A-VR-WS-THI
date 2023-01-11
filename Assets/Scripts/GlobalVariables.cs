@@ -10,17 +10,17 @@ public class GlobalVariables : MonoBehaviour
     public static int plantCounter;
     public static int poisonPlantCounter;
 
+
+    //Unused variables
+/* 
     public GameObject levelfinishedPopUp;
 
     public Transform XRRigPosition;
 
     private float spawnDistance = 2;
 
-    private bool stopUpdate = false;
+    private bool stopUpdate = false; */
 
-
-
-    //public GameObjects[] plants = plant.FindGameObjectsWithTag("Plant");
 
 
     // Start is called before the first frame update
@@ -32,18 +32,6 @@ public class GlobalVariables : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-/*         if (plantCounter == 5 && stopUpdate == false)
-            {
-                stopUpdate = true;
-                levelfinishedPopUp.SetActive(!levelfinishedPopUp.activeSelf);
-                levelfinishedPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x -5, 30,XRRigPosition.forward.z + 15).normalized * spawnDistance;
-                Debug.Log(levelfinishedPopUp.transform.position);
-                Debug.Log("EndConditionMet");
-                levelfinishedPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, levelfinishedPopUp.transform.position.y, XRRigPosition.position.z));
-                Debug.Log(levelfinishedPopUp.transform.position);
-                levelfinishedPopUp.transform.forward *= -1;
-                //levelfinishedPopUp.transform.Rotate(0,-45.0f,0.0f);
-            }   */          
+    {        
     }
 }

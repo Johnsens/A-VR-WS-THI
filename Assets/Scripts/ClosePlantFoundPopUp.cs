@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckIflast : MonoBehaviour
+public class ClosePlantFoundPopUp : MonoBehaviour
 {
 
     public GameObject plantPopUp;
@@ -28,6 +28,7 @@ public class CheckIflast : MonoBehaviour
     public void closePlantFoundPopUp() {
         if (GlobalVariables.plantCounter <= 4) {
             plantPopUp.SetActive(!plantPopUp.activeSelf);
+            Debug.Log("Pop up closed: " + GlobalVariables.plantCounter);
         }
         else {
             plantPopUp.SetActive(!plantPopUp.activeSelf);
