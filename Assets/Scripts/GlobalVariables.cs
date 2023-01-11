@@ -33,18 +33,17 @@ public class GlobalVariables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (plantCounter == 3 && stopUpdate == false)
+/*         if (plantCounter == 5 && stopUpdate == false)
             {
                 stopUpdate = true;
                 levelfinishedPopUp.SetActive(!levelfinishedPopUp.activeSelf);
-                levelfinishedPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x -10, 20 ,XRRigPosition.forward.z + 15).normalized * spawnDistance;
+                levelfinishedPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x -5, 30,XRRigPosition.forward.z + 15).normalized * spawnDistance;
                 Debug.Log(levelfinishedPopUp.transform.position);
                 Debug.Log("EndConditionMet");
                 levelfinishedPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, levelfinishedPopUp.transform.position.y, XRRigPosition.position.z));
                 Debug.Log(levelfinishedPopUp.transform.position);
                 levelfinishedPopUp.transform.forward *= -1;
-                levelfinishedPopUp.transform.Rotate(0,-45.0f,0.0f);
-            } 
-            
+                //levelfinishedPopUp.transform.Rotate(0,-45.0f,0.0f);
+            }   */          
     }
 }
