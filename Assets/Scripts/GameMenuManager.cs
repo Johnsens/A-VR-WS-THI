@@ -23,36 +23,11 @@ public class GameMenuManager : MonoBehaviour
 
     //Button declarations on the Overlays
 
-    public GameObject OverlayToSecondButton;
-    public GameObject OverlayToThirdButton;
-    public GameObject OverlayToFourthButton;
-    public GameObject CloseOverlayButton;
-
     //Not used right now, would be used to change the content of the Overlays when going through the pages
-
-    public GameObject OverlayPageOne;
-    public GameObject OverlayPageTwo;
-    public GameObject OverlayPageThree;
-    public GameObject OverlayPageFour;
-    public GameObject ClosePlantPopup;
-
 
     public Transform XRRigPosition;
 
-    private bool onetimeStart = false;
-    private bool onetimePlant = false;
-
-
     //Values used for counting inventories
-
-
-    public GameObject FirstPlantFoundPopUp;
-
-    public GameObject SecondPlantFoundPopUp;
-
-    public GameObject ThirdPlantFoundPopUp;
-
-    public int plantCount = 0;
 
 
     public InputActionProperty showButton;
@@ -95,24 +70,6 @@ public class GameMenuManager : MonoBehaviour
         gamemenu.transform.forward *= -1;
     }
 
-
-    void showPlantFoundPopUp()
-    {
-        plantPopUp.SetActive(!startMissionOverlay.activeSelf);
-
-        if (plant.isGrabbed == true)
-        {
-            plantCount += plantCount;
-            plantPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x, 0, XRRigPosition.forward.z).normalized * spawnDistance;
-            plantPopUp.transform.LookAt(new Vector3(XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
-            XRRigPosition.transform.forward *= -1;
-        }
-
-    }
-    void updatePlantFoundOverlay()
-    {
-
-    }
 
     /*void showEndPopup() {
         if (ClosePlantPopup.clicked) {

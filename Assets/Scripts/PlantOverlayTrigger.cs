@@ -19,37 +19,18 @@ public class PlantOverlayTrigger : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {      
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (counter == 1)
-        //{
-/*             levelfinishedPopUp.SetActive(!levelfinishedPopUp.activeSelf);
-            levelfinishedPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
-            Debug.Log(plantPopUp.transform.position);
-            Debug.Log("EndConditionMet");
-            levelfinishedPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, levelfinishedPopUp.transform.position.y, XRRigPosition.position.z));
-            Debug.Log(plantPopUp.transform.position);
-            levelfinishedPopUp.transform.forward *= -1;
-            Debug.Log("EndConditionMet"); */
-        //}
     }
 
 
     public void plantShown() {
                 plantPopUp.SetActive(!plantPopUp.activeSelf);
                 Debug.Log("Plant pop up shown");
-                //plantPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x,0,XRRigPosition.forward.z).normalized * spawnDistance;
-                //Debug.Log(plantPopUp.transform.position);
-                //plantPopUp.transform.LookAt(new Vector3 (XRRigPosition.position.x, plantPopUp.transform.position.y, XRRigPosition.position.z));
-                //Debug.Log(plantPopUp.transform.position);
-                //plantPopUp.transform.forward *= -1;
-                //Debug.Log(plantPopUp.transform.position);
-
                 plant.SetActive(!plant.activeSelf);
                 Debug.Log("Plant disappeared");
                 //This counter would be for different plants of the same type
