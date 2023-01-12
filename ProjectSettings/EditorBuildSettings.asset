@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: cc9307a9dee9205448834fbacc22ed68
-  - enabled: 1
-    path: Assets/Scenes/GameMenuScene.unity
-    guid: 0e63b091c6c49014fb94bd9aa6b5d54f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3fc29b35442a64a48b96d709e168370f, type: 2}
     com.htc.upm.wave.xrsdk.xrsettings: {fileID: 11400000, guid: 0cbdab12b4b62f5428b9fb90f1ce4447, type: 2}
