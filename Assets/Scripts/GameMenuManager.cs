@@ -33,7 +33,6 @@ public class GameMenuManager : MonoBehaviour
     public InputActionProperty showButton;
     //public Scene multiUserStartScene;
 
-    public Plant plant;
 
     private NetworkPlayer networkPlayer;
 

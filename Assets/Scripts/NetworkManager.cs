@@ -46,7 +46,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Ein neuer Avatar hat den Raum betreten.");
         int index = Random.Range(0, modelList.Count);
-        networkPlayer = PhotonNetwork.Instantiate(modelList[index], new Vector3(0, 100, 0), Quaternion.identity, 0);
+        networkPlayer = PhotonNetwork.Instantiate(modelList[index], new Vector3(0, 39, 0), Quaternion.identity, 0);
         networkPlayer.transform.parent = transform;
         cameraRig.transform.parent = networkPlayer.transform;
     }
