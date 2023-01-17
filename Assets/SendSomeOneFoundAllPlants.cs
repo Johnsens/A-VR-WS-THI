@@ -22,6 +22,10 @@ namespace Photon.Pun
         public bool someonefinished = false;
         public bool Ifinished = false;
 
+        private float spawnDistance = 2;
+
+        public Transform headRig;
+
         private bool m_StoredSomeoneFinished;
         private bool m_StoredIfinished;
 
@@ -65,6 +69,12 @@ namespace Photon.Pun
         public void SetSomeoneFinished(){
             Debug.Log("someone finished");
             finishedInformation.SetActive(true);
+            finishedInformation.transform.position = headRig.position + new Vector3(headRig.forward.x -5, 30,headRig.forward.z + 15).normalized * spawnDistance;
+            Debug.Log(finishedInformation.transform.position);
+            Debug.Log("EndConditionMet");
+            finishedInformation.transform.LookAt(new Vector3 (headRig.position.x, finishedInformation.transform.position.y, headRig.position.z));
+            Debug.Log(finishedInformation.transform.position);
+            finishedInformation.transform.forward *= -1;
         }
 
         
