@@ -55,6 +55,7 @@ namespace Photon.Pun
         }
 
         public void IfoundAllPlants(){
+            Debug.Log("foundallplants");
             Ifinished = true;
             someonefinished = true;
             photonView.RPC("SetSomeoneFinished", RpcTarget.All);

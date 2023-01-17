@@ -13,7 +13,7 @@ public class PlantOverlayTrigger : MonoBehaviour
     public GameObject levelfinishedPopUp;
     public Transform XRRigPosition;
     public float spawnDistance = 2;
-    public int maxPlantCounter = 5;
+    public int maxPlantCounter = 1;
     //This counter would be for different plants of the same type
     //public int counter = 0;
 
@@ -54,6 +54,7 @@ public class PlantOverlayTrigger : MonoBehaviour
         Debug.Log("The PlantCounter is " + GlobalVariables.plantCounter);
 
         if(GlobalVariables.plantCounter == maxPlantCounter)
+        Debug.Log("im plant counter");
             Ifinished();
         if (plant.CompareTag("Poisonous")){
             GlobalVariables.poisonPlantCounter = GlobalVariables.poisonPlantCounter +1;
