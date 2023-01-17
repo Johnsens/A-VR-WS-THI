@@ -62,6 +62,7 @@ namespace Photon.Pun
 
         [PunRPC]
         public void SetSomeoneFinished(){
+            Debug.Log("someone finished");
             finishedInformation.SetActive(true);
         }
 
