@@ -8,7 +8,7 @@ public class ClosePlantFoundPopUp : MonoBehaviour
     public GameObject plantPopUp;
     private float spawnDistance = 2;
 
-    public GameObject fireworks;
+    //public GameObject fireworks;
 
     private bool stopUpdate = false;
 
@@ -34,9 +34,9 @@ public class ClosePlantFoundPopUp : MonoBehaviour
         }
         else {
             plantPopUp.SetActive(!plantPopUp.activeSelf);
-            fireworks.SetActive(!fireworks.activeSelf);
-            fireworks.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x, XRRigPosition.forward.y + 30, XRRigPosition.forward.z).normalized;
-            fireworks.GetComponent<Rigidbody>().AddForce (Vector3.up * 15000);
+            //fireworks.SetActive(!fireworks.activeSelf);
+            //fireworks.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x, XRRigPosition.forward.y + 30, XRRigPosition.forward.z).normalized;
+            //fireworks.GetComponent<Rigidbody>().AddForce (Vector3.up * 15000);
             levelfinishedPopUp.SetActive(!levelfinishedPopUp.activeSelf);
             levelfinishedPopUp.transform.position = XRRigPosition.position + new Vector3(XRRigPosition.forward.x -5, 30,XRRigPosition.forward.z + 15).normalized * spawnDistance;
             Debug.Log(levelfinishedPopUp.transform.position);
