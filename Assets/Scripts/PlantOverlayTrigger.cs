@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using Photon.Pun;
 
 public class PlantOverlayTrigger : MonoBehaviour
 {
-
+    public SendSomeOneFoundAllPlants sendSomeoneFoundAllPlants;
     public GameObject plantPopUp;
     public GameObject plant;
     public GameObject levelfinishedPopUp;
     public Transform XRRigPosition;
     public float spawnDistance = 2;
+    public int maxPlantCounter = 5;
     //This counter would be for different plants of the same type
     //public int counter = 0;
 
@@ -24,6 +26,17 @@ public class PlantOverlayTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.F) && sendSomeoneFoundAllPlants != null){
+            Debug.Log("I finished!");
+            sendSomeoneFoundAllPlants.IfoundAllPlants();
+            //do other stuff for this player
+        }
+    }
+
+    private void Ifinished(){
+        Debug.Log("I finished!");
+            sendSomeoneFoundAllPlants.IfoundAllPlants();
+            //do other stuff for this player
     }
 
 
@@ -39,6 +52,9 @@ public class PlantOverlayTrigger : MonoBehaviour
     public void countPlants() {
         GlobalVariables.plantCounter = GlobalVariables.plantCounter + 1;
         Debug.Log("The PlantCounter is " + GlobalVariables.plantCounter);
+
+        if(GlobalVariables.plantCounter == maxPlantCounter)
+            Ifinished();
         if (plant.CompareTag("Poisonous")){
             GlobalVariables.poisonPlantCounter = GlobalVariables.poisonPlantCounter +1;
             Debug.Log("The PoisonousPlantCounter is " + GlobalVariables.poisonPlantCounter);
