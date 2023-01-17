@@ -7,7 +7,7 @@ using Photon.Pun;
 
 public class PlantOverlayTrigger : MonoBehaviour
 {
-    public SendSomeOneFoundAllPlants sendSomeoneFoundAllPlants;
+    public SendSomeOneFoundAllPlants sendSomeOneFoundAllPlants;
     public GameObject plantPopUp;
     public GameObject plant;
     public GameObject levelfinishedPopUp;
@@ -26,16 +26,16 @@ public class PlantOverlayTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F) && sendSomeoneFoundAllPlants != null){
+        if(Input.GetKeyDown(KeyCode.F) && sendSomeOneFoundAllPlants != null){
             Debug.Log("I finished!");
-            sendSomeoneFoundAllPlants.IfoundAllPlants();
+            sendSomeOneFoundAllPlants.IfoundAllPlants();
             //do other stuff for this player
         }
     }
 
     private void Ifinished(){
         Debug.Log("I finished!");
-            sendSomeoneFoundAllPlants.IfoundAllPlants();
+            sendSomeOneFoundAllPlants.IfoundAllPlants();
             //do other stuff for this player
     }
 
