@@ -21,17 +21,11 @@ public class GameMenuManager : MonoBehaviour
     public GameObject endPopUp;
     public GameObject startMissionOverlay;
 
-    //Button declarations on the Overlays
-
-    //Not used right now, would be used to change the content of the Overlays when going through the pages
 
     public Transform XRRigPosition;
 
-    //Values used for counting inventories
-
 
     public InputActionProperty showButton;
-    //public Scene multiUserStartScene;
 
 
     private NetworkPlayer networkPlayer;
@@ -43,14 +37,12 @@ public class GameMenuManager : MonoBehaviour
     void Start()
     {
         showStartMissionOverlay();
-        //    showPlantFoundPopUp();
     }
 
     // Update is called once per frame
     void Update()
     {
     }
-
 
     //Functions to show Overlays
     void showMenuSwitch()
@@ -69,20 +61,10 @@ public class GameMenuManager : MonoBehaviour
         gamemenu.transform.forward *= -1;
     }
 
-
-    /*void showEndPopup() {
-        if (ClosePlantPopup.clicked) {
-            plantPopup.SetActive(false);
-            endPopUp.SetActive(true);
-        }
-    }*/
-
     void showStartMissionOverlay()
     {
-        //XROrigin rig = FindObjectOfType<XROrigin>();
-        //headRig = rig.transform.Find("ViveCameraRig/Camera");
-        startMissionOverlay.SetActive(!startMissionOverlay.activeSelf);
 
+        startMissionOverlay.SetActive(!startMissionOverlay.activeSelf);
 
     }
 
