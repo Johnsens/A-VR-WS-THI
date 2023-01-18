@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using Photon.Pun;
+using TMPro;
 
 public class PlantOverlayTrigger : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlantOverlayTrigger : MonoBehaviour
     public Transform XRRigPosition;
     public float spawnDistance = 2;
     public int maxPlantCounter = 5;
+
+    public TextMeshProUGUI title;
     //This counter would be for different plants of the same type
     //public int counter = 0;
 
@@ -41,8 +44,10 @@ public class PlantOverlayTrigger : MonoBehaviour
 
 
     public void plantShown() {
-                plantPopUp.SetActive(!plantPopUp.activeSelf);
                 countPlants();
+                title.text = GlobalVariables.plantCounter.ToString() + "/5 Plants found!";
+                Debug.Log(title.text + "gets shown in UI");
+                plantPopUp.SetActive(!plantPopUp.activeSelf);
                 Debug.Log("Plant pop up shown");
                 plant.SetActive(!plant.activeSelf);
                 Debug.Log("Plant disappeared");
