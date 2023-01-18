@@ -55,6 +55,7 @@ public class NetworkPlayer : MonoBehaviourPun
 
             CameraOffset.y = 2;
             CameraOffset.z = (float)-0.3;
+            CameraOffset.z = (float)0.2;
             MapPosition(Head, headRig, CameraOffset);
         }
     }
