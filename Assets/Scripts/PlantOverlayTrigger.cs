@@ -29,11 +29,7 @@ public class PlantOverlayTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F) && sendSomeOneFoundAllPlants != null){
-            Debug.Log("I finished!");
-            sendSomeOneFoundAllPlants.IfoundAllPlants();
-            //do other stuff for this player
-        }
+      
     }
 
     private void Ifinished(){
